@@ -1,10 +1,25 @@
 package main
 
 import (
-	"fmt"
+	"math/rand"
+	"time"
+
+	gobagcontext "github.com/danielkrainas/gobag/context"
+
+	"github.com/tenderbytes/kindermud/pkg/cmd"
 )
 
-// The starting function of our application
+var appVersion string
+
+const defaultVersion = "0.0.0-dev"
+
 func main() {
-	fmt.Println("kindermud started")
+	if appVersion == "" {
+		appVersion = defaultVersion
+	}
+
+	rand.Seed(time.Now().Unix())
+
+	ctx := gobagcontext.WithVersion(gobagcontext.Background(), appVersion)
+	cmd.Execute(ctx)
 }

@@ -100,5 +100,5 @@ $ make test
 You can also use `go test` directly for any package without additional bootstrapping:
 
 ```
-$ go test ./api/
+$ go test ./pkg/api/
 ```
