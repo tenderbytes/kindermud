@@ -7,23 +7,20 @@ import (
 )
 
 var (
-	serverHost  string
-	labProvider string
-	configPath  string
+	serverHost string
+	configPath string
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&serverHost, "server", "s", "http://localhost:4188", "")
-	rootCmd.PersistentFlags().StringVarP(&labProvider, "lab", "l", "", "")
 	rootCmd.PersistentFlags().StringVarP(&configPath, "config", "c", "", "")
 }
 
 var rootContext context.Context
 
 var rootCmd = &cobra.Command{
-	Use:   "tenderbytes-lab",
-	Short: "`tenderbytes-lab`",
-	Long:  "`tenderbytes-lab`",
+	Use:   "kindermud",
+	Short: "`kindermud`",
+	Long:  "`kindermud`",
 }
 
 func Execute(ctx context.Context) {
